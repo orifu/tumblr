@@ -107,7 +107,7 @@
 
 <body>
     <nav>
-        <a href="/">
+        <a href="/"{block:HomePage} data-checked="true"{/block:HomePage}>
             <span class="material-icons-outlined">home</span>
             home
         </a>
@@ -135,6 +135,15 @@
             </a>
         {/block:AskEnabled}
     </nav>
+
+    <script>
+        // highlights nav options if we're on that page
+        [...document.querySelectorAll('nav > a')].forEach((a) => {
+            if (a.href === location.href) {
+                a.setAttribute('data-checked', 'true');
+            }
+        });
+    </script>
 
     <main>
         <section class="title">
