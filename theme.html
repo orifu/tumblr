@@ -44,6 +44,18 @@
             color: {AccentColor};
         }
 
+        /* avatar image shapes */
+        .avatar-square {
+            border-radius: 0.5em;
+        }
+        .avatar-circle {
+            border-radius: 50%;
+        }
+        .avatar-square,
+        .avatar-circle {
+            border: 5px solid {BackgroundColor};
+        }
+
         .post header {
             display: flex;
             align-items: center;
@@ -169,7 +181,7 @@
     <main>
         <section class="title follows-theme">
             {block:ShowAvatar}
-                <img src="{PortraitURL-128}" alt="Profile picture" />
+                <img class="avatar-{AvatarShape}" src="{PortraitURL-128}" alt="Profile picture" />
             {/block:ShowAvatar}
 
             <h1>{Title}</h1>
