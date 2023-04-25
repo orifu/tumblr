@@ -23,6 +23,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 
     <style>
+        /* apply the user's custom styles to the header section */
+        section.follows-theme {
+            background-color: {BackgroundColor};
+            color: {TitleColor};
+        }
+
+        section.follows-theme h1 {
+            font-family: {TitleFont};
+            font-weight: {TitleFontWeight};
+        }
+
+        section.follows-theme a {
+            color: {AccentColor};
+        }
+
         .post header {
             display: flex;
             align-items: center;
@@ -146,7 +161,7 @@
     </script>
 
     <main>
-        <section class="title">
+        <section class="title follows-theme">
             {block:ShowAvatar}
                 <img src="{PortraitURL-128}" alt="Profile picture" />
             {/block:ShowAvatar}
