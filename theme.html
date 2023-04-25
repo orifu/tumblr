@@ -90,14 +90,20 @@
             gap: 1.5em;
         }
 
-        .reblog-trail > div > .author {
+        /* for subposts */
+        .subpost > .author {
             display: flex;
             align-items: center;
             gap: 0.5em;
             margin-bottom: 0.5em;
         }
 
-        .reblog-trail > div > .author img {
+        .subpost > .author a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .subpost > .author img {
             width: 2em;
             border-radius: 0.25em;
         }
@@ -340,19 +346,37 @@
                 {/block:Video}
 
                 {block:Answer}
-                    <section>
-                        {Question}
-                    </section>
+                    <div>
+                        <div class="subpost">
+                            <div class="author">
+                                <img src="{AskerPortraitURL-64}" />
+                                <span><b>{Asker}</b> asked <b>{Answerer}</b></span>
+                            </div>
 
-                    {Answer}
+                            <div class="content">{Question}</div>
+                        </div>
+                    </div>
 
-                    {Replies}
+                    {block:Answerer}
+                        <div class="subpost">
+                            <div class="author">
+                                <img src="{AnswererPortraitURL-64}" />
+                                <span>{Answerer}</span>
+                            </div>
+
+                            <div class="content">{Answer}</div>
+                        </div>
+                    {/block:Answerer}
+
+                    {block:NotReblog}
+                        {Replies}
+                    {/block:NotReblog}
                 {/block:Answer}
 
                 {block:RebloggedFrom}
                     <div class="reblog-trail">
                         {block:Reblogs}
-                            <div>
+                            <div class="subpost">
                                 <div class="author">
                                     <img src="{PortraitURL-64}" alt="{Username}'s avatar" />
                                     <span>{Username}</span>
