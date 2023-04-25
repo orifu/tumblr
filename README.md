@@ -10,6 +10,8 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
  - [ ] a way to search
  - [ ] highlighted posts on home
  - [ ] liked posts on home
+ - [ ] all the meta tags
+ - [ ] some theme settings
 
 ### posts
  - [ ] reblog trails (wip)
