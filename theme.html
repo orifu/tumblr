@@ -354,24 +354,23 @@
                 {/block:Answer}
 
 
-                <footer>
-                    {block:HasTags}
-                        <div class="tag-parent">
-                            {block:Tags}
-                                <a href="{TagURL}">
-                                    #{Tag}
-                                </a>
-                            {/block:Tags}
-                        </div>
-                    {/block:HasTags}
+                {block:Date}
+                    <footer>
+                        {block:HasTags}
+                            <div class="tag-parent">
+                                {block:Tags}
+                                    <a href="{TagURL}">
+                                        #{Tag}
+                                    </a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
 
-                    <div>
-                        <a href="{Permalink}#notes">
-                            {NoteCountWithLabel}
-                        </a>
+                        <div>
+                            <a href="{Permalink}#notes">
+                                {NoteCountWithLabel}
+                            </a>
 
-
-                        {block:Date}
                             <a href="{Permalink}">
                                 <time
                                     datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}"
@@ -379,9 +378,9 @@
                                     {TimeAgo}
                                 </time>
                             </a>
-                        {/block:Date}
-                    </div>
-                </footer>
+                        </div>
+                    </footer>
+                {/block:Date}
             </section>
         {/block:Posts}
 
