@@ -102,6 +102,12 @@
             border-radius: 0.25em;
         }
 
+        /* hide empty reblog trails */
+        .reblog-trail:empty,
+        .reblog-trail:-moz-only-whitespace {
+            display: none;
+        }
+
         /* for stuff at the bottom of posts (notes, time) */
         .post footer {
             display: flex;
@@ -143,6 +149,11 @@
 
         figure {
             margin: 0;
+        }
+
+        /* fixes blank space below figures */
+        figure a {
+            display: flex;
         }
 
         figure img {
