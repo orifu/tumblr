@@ -23,8 +23,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 
     <style>
+        /* make sections flexbox bc i like flexbox */
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .content > *:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .content > *:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         /* apply the user's custom styles to the header section */
         section.follows-theme {
+            align-items: center;
+            gap: 0;
+
             background-color: {BackgroundColor};
             {block:ShowHeaderImage}
                 background: url({HeaderImage}), {BackgroundColor};
@@ -53,9 +72,11 @@
         }
         .avatar-square,
         .avatar-circle {
+            width: 128px;
             border: 5px solid {BackgroundColor};
         }
 
+        /* for stuff at the top of posts (pin indicator) */
         .post header {
             display: flex;
             align-items: center;
@@ -208,7 +229,7 @@
                         </h1>
                     {/block:Title}
                     
-                    {Body}
+                    <div class="content">{Body}</div>
                 {/block:Text}
 
                 {block:Photo}
