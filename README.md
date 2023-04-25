@@ -15,7 +15,7 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
  - [ ] reblog trails (wip)
  - [ ] legacy posts (wip)
     - [x] text posts
-    - [ ] photo posts
+    - [x] photo posts
     - [ ] photosets
     - [ ] quotes
     - [ ] link posts

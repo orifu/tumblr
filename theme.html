@@ -259,21 +259,6 @@
                     {block:NotReblog}
                         <div class="content">{Body}</div>
                     {/block:NotReblog}
-
-                    {block:RebloggedFrom}
-                        <div class="reblog-trail">
-                            {block:Reblogs}
-                                <div>
-                                    <div class="author">
-                                        <img src="{PortraitURL-64}" alt="{Username}'s avatar" />
-                                        <span>{Username}</span>
-                                    </div>
-
-                                    <div class="content">{Body}</div>
-                                </div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
                 {/block:Text}
 
                 {block:Photo}
@@ -282,9 +267,9 @@
                             <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
                         {LinkCloseTag}
 
-                        {block:Caption}
+                        {block:NotReblog}{block:Caption}
                             <figcaption>{Caption}</figcaption>
-                        {/block:Caption}
+                        {/block:Caption}{/block:NotReblog}
                     </figure>
                 {/block:Photo}
 
@@ -352,6 +337,21 @@
 
                     {Replies}
                 {/block:Answer}
+
+                {block:RebloggedFrom}
+                    <div class="reblog-trail">
+                        {block:Reblogs}
+                            <div>
+                                <div class="author">
+                                    <img src="{PortraitURL-64}" alt="{Username}'s avatar" />
+                                    <span>{Username}</span>
+                                </div>
+
+                                <div class="content">{Body}</div>
+                            </div>
+                        {/block:Reblogs}
+                    </div>
+                {/block:RebloggedFrom}
 
 
                 {block:Date}
