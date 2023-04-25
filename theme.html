@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- todo -->
+    <title>
+        {block:PostSummary}{PostSummary} ~ {/block:PostSummary}
+        {Title}
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="{Title}">
+    {block:ShowDescription}
+        <meta property="og:description" content="{MetaDescription}">
+    {/block:ShowDescription}
+
+    <link rel="shortcut icon" href="{Favicon}">
+
+    <link rel="stylesheet" href="https://orifu.net/styles/material-v2.css?cache2" title="Default">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+
+    <style>
+        .post header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .post footer {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            /* padding-top: 1em;
+            border-top: 1px solid var(--foreground-3); */
+        }
+
+        .post footer > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .post footer .tag-parent {
+            justify-content: start;
+            flex-wrap: wrap;
+            column-gap: 1em;
+        }
+
+        .post footer .tag-parent > * {
+            text-decoration: none;
+        }
+
+        /* TAG COLOURS??? */
+        .post.anxiety_stuff, .post.ori_rants { --deg: 0; }
+        .post.minecraft, .post.orifu_plays_mc, .post.orifu_touches_grass { --deg: 113; }
+
+        #pagination {
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        blockquote {
+            margin: 0;
+            padding-left: 2em;
+            border-left: 1px solid var(--foreground-4);
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        /* fixes some stuff overflowing */
+        iframe.photoset,
+        iframe.tumblr_audio_player {
+            width: 100%;
+        }
+
+        /* hide the ALT span */
+        span.tmblr-alt-text-helper {
+            display: none;
+        }
+
+        /* get rid of those tumblr app popups */
+        body > iframe {
+            display: none;
+        }
+    </style>
+
+    <!-- this theme's source is based on buildthemes.tumblr.com -->
+    <!-- so thx :D -->
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <span class="material-icons-outlined">home</span>
+            home
+        </a>
+
+        {block:HasPages}
+            {block:Pages}
+                <a href="{URL}">{Label}</a>
+            {/block:Pages}
+        {/block:HasPages}
+
+        {block:SubmissionsEnabled}
+            <a href="/submit">
+                <span class="material-icons-outlined">send</span>
+                {SubmitLabel}
+            </a>
+        {/block:SubmissionsEnabled}
+
+        {block:AskEnabled}
+            <a href="/ask">
+                <span class="material-icons-outlined">contact_support</span>
+                {AskLabel}
+            </a>
+        {/block:AskEnabled}
+    </nav>
+
+    <main>
+        <section class="title">
+            {block:ShowAvatar}
+                <img src="{PortraitURL-128}" alt="Profile picture" />
+            {/block:ShowAvatar}
+            <h1>{Title}</h1>
+            {block:ShowDescription}{block:Description}
+                <p>{Description}</p>
+            {/block:Description}{/block:ShowDescription}
+        </section>
+
+        {block:Posts}
+            <section class="post custom-color {TagsAsClasses}">
+                <header>
+                    {block:PinnedPostLabel}
+                        <span class="badge">
+                            <span class="material-icons-outlined">push_pin</span>
+                            Pinned
+                        </span>
+                    {/block:PinnedPostLabel}
+                </header>
+
+                {block:Text}
+                    {block:Title}
+                        <h1>
+                            <a href="{Permalink}">{Title}</a>
+                        </h1>
+                    {/block:Title}
+                    
+                    {Body}
+                {/block:Text}
+
+                {block:Photo}
+                    <figure>
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <figcaption>{Caption}</figcaption>
+                        {/block:Caption}
+                    </figure>
+                {/block:Photo}
+
+                {block:PhotoSet}
+                    <figure>
+                        {PhotoSet}
+
+                        {block:Caption}
+                            <figcaption>{Caption}</figcaption>
+                        {/block:Caption}
+                    </figure>
+                {/block:PhotoSet}
+
+                {block:Quote}
+                    <blockquote>{Quote}</blockquote>
+
+                    {block:Source}
+                        <cite>{Source}</cite>
+                    {/block:Source}
+                {/block:Quote}
+
+                {block:Link}
+                    <p>
+                        <a {Target} href="{URL}">{Name}</a>
+                    </p>
+
+                    {block:Description}
+                        <p>{Description}</p>
+                    {/block:Description}
+                {/block:Link}
+
+                {block:Chat}
+                    {block:Lines}
+                        <p>
+                            {block:Label}
+                                <b>{Label}</b>
+                            {/block:Label}
+                            {Line}
+                        </p>
+                    {/block:Lines}
+                {/block:Chat}
+
+                {block:Audio}
+                    {AudioEmbed}
+
+                    {block:Caption}
+                        <p>{Caption}</p>
+                    {/block:Caption}
+                {/block:Audio}
+
+                {block:Video}
+                    {Video-700}
+
+                    {block:Caption}
+                        <p>{Caption}</p>
+                    {/block:Caption}
+                {/block:Video}
+
+                {block:Answer}
+                    <section>
+                        {Question}
+                    </section>
+
+                    {Answer}
+
+                    {Replies}
+                {/block:Answer}
+
+
+                <footer>
+                    {block:HasTags}
+                        <div class="tag-parent">
+                            {block:Tags}
+                                <a href="{TagURL}">
+                                    #{Tag}
+                                </a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+
+                    <div>
+                        <a href="{Permalink}#notes">
+                            {NoteCountWithLabel}
+                        </a>
+
+
+                        {block:Date}
+                            <a href="{Permalink}">
+                                <time
+                                    datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}"
+                                >
+                                    {TimeAgo}
+                                </time>
+                            </a>
+                        {/block:Date}
+                    </div>
+                </footer>
+            </section>
+        {/block:Posts}
+
+        {block:Pagination}
+            <div id="pagination">
+                <div>
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="badge">
+                            <span class="material-icons-outlined">arrow_back</span>
+                            Previous
+                        </a>
+                    {/block:PreviousPage}
+                </div>
+                <div>
+                    {CurrentPage} / {TotalPages}
+                </div>
+                <div>
+                    {block:NextPage}
+                        <a href="{NextPage}" class="badge">
+                            Next
+                            <span class="material-icons-outlined">arrow_forward</span>
+                        </a>
+                    {/block:NextPage}
+                </div>
+            </div>
+        {/block:Pagination}
+    </main>
+
+    <div id="the-centerer"></div>
+</body>
+
+</html>
