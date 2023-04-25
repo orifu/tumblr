@@ -26,6 +26,12 @@
         /* apply the user's custom styles to the header section */
         section.follows-theme {
             background-color: {BackgroundColor};
+            {block:ShowHeaderImage}
+                background: url({HeaderImage}), {BackgroundColor};
+                background-size: 100%;
+                background-repeat: no-repeat;
+                padding-top: 10em;
+            {/block:ShowHeaderImage}
             color: {TitleColor};
         }
 
@@ -165,6 +171,7 @@
             {block:ShowAvatar}
                 <img src="{PortraitURL-128}" alt="Profile picture" />
             {/block:ShowAvatar}
+
             <h1>{Title}</h1>
             {block:ShowDescription}{block:Description}
                 <p>{Description}</p>
