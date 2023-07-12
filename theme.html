@@ -27,7 +27,7 @@
         section {
             display: flex;
             flex-direction: column;
-            gap: 1.5em;
+            gap: 1rem;
         }
 
         .content > *:first-child {
@@ -145,6 +145,17 @@
             align-items: center;
             justify-items: center;
             grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* assorted post stuff */
+
+        /* text post titles */
+        h1.title {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        h1.title a {
+            text-decoration: none;
         }
 
         blockquote {
@@ -272,7 +283,7 @@
 
                 {block:Text}
                     {block:Title}
-                        <h1>
+                        <h1 class="title">
                             <a href="{Permalink}">{Title}</a>
                         </h1>
                     {/block:Title}
