@@ -178,6 +178,10 @@
             display: none;
         }
 
+        .no-underline {
+            text-decoration: none;
+        }
+
         /* get rid of those tumblr app popups */
         body > iframe {
             display: none;
@@ -402,11 +406,11 @@
                         {/block:HasTags}
 
                         <div>
-                            <a href="{Permalink}#notes">
+                            <a href="{Permalink}#notes" class="no-underline">
                                 {NoteCountWithLabel}
                             </a>
 
-                            <a href="{Permalink}">
+                            <a href="{Permalink}" class="no-underline">
                                 <time
                                     datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}"
                                 >
