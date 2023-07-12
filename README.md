@@ -23,7 +23,7 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
     - [ ] link posts
     - [ ] chat posts
     - [ ] audio posts
-    - [ ] video posts
+    - [x] video posts
     - [x] question posts
  - [ ] permalink page (wip)
  - [x] note count
