@@ -108,6 +108,13 @@
             border-radius: 0.25em;
         }
 
+        .subpost-boxed {
+            border: 1px solid var(--foreground-4);
+            background-color: var(--background-2);
+            border-radius: 16px;
+            padding: 1em;
+        }
+
         /* hide empty reblog trails */
         .reblog-trail:empty,
         .reblog-trail:-moz-only-whitespace {
@@ -367,30 +374,30 @@
 
                 {block:Answer}
                     <div>
-                        <div class="subpost">
+                        <div class="subpost subpost-boxed">
                             <div class="author">
                                 <img src="{AskerPortraitURL-64}" />
-                                <span><b>{Asker}</b> asked <b>{Answerer}</b></span>
+                                <span><b>{Asker}</b> asked</span>
                             </div>
 
                             <div class="content">{Question}</div>
                         </div>
+
+                        {block:NotReblog}
+                            {Replies}
+                        {/block:NotReblog}
                     </div>
 
                     {block:Answerer}
                         <div class="subpost">
                             <div class="author">
                                 <img src="{AnswererPortraitURL-64}" />
-                                <span>{Answerer}</span>
+                                <span><b>{Answerer}</b></span>
                             </div>
 
                             <div class="content">{Answer}</div>
                         </div>
                     {/block:Answerer}
-
-                    {block:NotReblog}
-                        {Replies}
-                    {/block:NotReblog}
                 {/block:Answer}
 
                 {block:RebloggedFrom}
