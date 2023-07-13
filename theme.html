@@ -180,15 +180,14 @@
             display: flex;
         }
 
-        figure img {
+        /* fixes some stuff overflowing */
+        figure img,
+        iframe.tumblr_video_iframe {
             width: 100%;
             border-radius: 16px;
         }
-
-        /* fixes some stuff overflowing */
         iframe.photoset,
-        iframe.tumblr_audio_player,
-        iframe.tumblr_video_iframe {
+        iframe.tumblr_audio_player {
             width: 100%;
         }
         div.tumblr_video_container {
