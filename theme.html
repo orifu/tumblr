@@ -16,6 +16,8 @@
         <meta property="og:description" content="{MetaDescription}">
     {/block:ShowDescription}
 
+    <meta name="text:Website Hue" content="260">
+
     <link rel="shortcut icon" href="{Favicon}">
 
     <link rel="stylesheet" href="https://orifu.net/styles/material-v2.css?cache2" title="Default">
@@ -23,6 +25,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 
     <style>
+        {block:IfWebsiteHue}
+            :root,
+            .custom-color {
+                --deg: {text:Website Hue}deg;
+            }
+        {/block:IfWebsiteHue}
+
         /* make sections flexbox bc i like flexbox */
         section {
             display: flex;

@@ -11,7 +11,8 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
  - [ ] highlighted posts on home
  - [ ] liked posts on home
  - [ ] all the meta tags
- - [ ] some theme settings
+ - [x] option to change theme colour
+ - [ ] tag-dependent hues?
 
 ### posts
  - [ ] reblog trails (wip)
