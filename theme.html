@@ -342,13 +342,23 @@
                 {/block:Quote}
 
                 {block:Link}
-                    <p>
-                        <a {Target} href="{URL}">{Name}</a>
-                    </p>
+                    <div class="content">
+                        <div class="npf-link-block no-poster">
+                            <a {Target} href="{URL}">
+                                <div class="title">{Name}</div>
+                                <div class="bottom">
+                                    {block:Excerpt}
+                                        <div class="description">{Excerpt}</div>
+                                    {/block:Excerpt}
+                                    <div class="site-name">{Host}</div>
+                                </div>
+                            </a>
+                        </div>
 
-                    {block:Description}
-                        <p>{Description}</p>
-                    {/block:Description}
+                        {block:NotReblog}{block:Description}
+                            <p>{Description}</p>
+                        {/block:Description}{/block:NotReblog}
+                    </div>
                 {/block:Link}
 
                 {block:Chat}
