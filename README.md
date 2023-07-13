@@ -44,4 +44,7 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
 
 ### other
  - [ ] get rid of all the tumblr popups (wip)
- - [ ] figure out the black bars around videos?
+
+### issues
+ - [ ] figure out the black bars around videos
+ - [ ] non 16:9 banners are stretched
