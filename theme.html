@@ -84,7 +84,8 @@
         }
 
         /* for the reblog trail */
-        .reblog-trail {
+        .reblog-trail,
+        .ask-post {
             display: flex;
             flex-direction: column;
             gap: 1.5em;
@@ -377,7 +378,7 @@
                 {/block:Video}
 
                 {block:Answer}
-                    <div>
+                    <div class="ask-post">
                         <div class="subpost subpost-boxed">
                             <div class="author">
                                 <img src="{AskerPortraitURL-64}" />
@@ -388,20 +389,20 @@
                         </div>
 
                         {block:NotReblog}
-                            {Replies}
+                            <div class="content">{Replies}</div>
                         {/block:NotReblog}
-                    </div>
 
-                    {block:Answerer}
-                        <div class="subpost">
-                            <div class="author">
-                                <img src="{AnswererPortraitURL-64}" />
-                                <span><b>{Answerer}</b></span>
+                        {block:Answerer}
+                            <div class="subpost">
+                                <div class="author">
+                                    <img src="{AnswererPortraitURL-64}" />
+                                    <span><b>{Answerer}</b></span>
+                                </div>
+    
+                                <div class="content">{Answer}</div>
                             </div>
-
-                            <div class="content">{Answer}</div>
-                        </div>
-                    {/block:Answerer}
+                        {/block:Answerer}
+                    </div>
                 {/block:Answer}
 
                 {block:RebloggedFrom}
