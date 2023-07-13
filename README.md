@@ -2,6 +2,17 @@
 
 custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
 
+## colouring posts based on tags
+
+in advanced settings, you can add custom css. to colour a tag, add a line like this:
+
+```css
+.post.TAG{--deg:HUE}
+```
+
+- replace `TAG` with the tag you want, replacing spaces with underscores
+- replace `HUE` with a number between 0 and 360
+
 ## todo
 
 ### layout
@@ -12,7 +23,6 @@ custom theme for [my tumblr blog](https://orifu.tumblr.com/). its wip
  - [ ] liked posts on home
  - [ ] all the meta tags
  - [x] option to change theme colour
- - [ ] tag-dependent hues?
 
 ### posts
  - [ ] reblog trails (wip)
