@@ -27,7 +27,7 @@
         section {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .content > *:first-child {
@@ -95,7 +95,7 @@
             display: flex;
             align-items: center;
             gap: 0.5em;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.75em;
         }
 
         .subpost > .author a {
@@ -198,6 +198,11 @@
 
         /* hide the ALT span */
         span.tmblr-alt-text-helper {
+            display: none;
+        }
+
+        /* remove empty paragraph blocks */
+        p:empty {
             display: none;
         }
 
